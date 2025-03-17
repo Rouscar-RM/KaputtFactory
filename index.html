@@ -112,7 +112,14 @@
             };
 
       document.body.appendChild(script);
-
+var Module = {
+        locateFile: function(path) {
+            if (path.endsWith('.wasm')) {
+                return path + '?type=application/wasm';
+            }
+            return path;
+        }
+    };
     </script>
   </body>
 </html>
